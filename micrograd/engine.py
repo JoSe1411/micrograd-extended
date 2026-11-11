@@ -123,7 +123,7 @@ class Value:
 
     def __pow__(self, other):
         assert isinstance(other, (int, float)), "only supporting int/float powers"
-        out = Value(self.data ** other, (self,), f"**{other}")
+        out = Value(self.data**other, (self,), f"**{other}")
 
         def _backward():
             # d/dx (x^n) = n * x^(n - 1)
@@ -134,11 +134,11 @@ class Value:
 
     def __truediv__(self, other):
         # Division via power: self * (other ** -1)
-        return self * (other ** -1)
+        return self * (other**-1)
 
     def __rtruediv__(self, other):
         # Fallback when scalar is on the left: other / self
-        return Value(other) * (self ** -1)
+        return Value(other) * (self**-1)
 
     def exp(self):
         x = self.data
@@ -161,6 +161,7 @@ class Value:
         out._backward = _backward
         return out
 
+    # various activation functions
     def tanh(self):
         # tanh(x) = (e^(2x) - 1) / (e^(2x) + 1)
         e = (2 * self).exp()
@@ -174,6 +175,22 @@ class Value:
 
         out._backward = _backward
         return out
+
+
+    def gelu(self):
+        x = self.data
+        # CDF computation: Phi(x) = 0.5 * (1 + erf(x / sqrt(2)))
+        phi = 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
+        res = Value(x * phi, (self,), "gelu")
+
+        def _backward():
+            # PDF computation: phi_prime(x) = (1 / sqrt(2 * pi)) * exp(-0.5 * x^2)
+            pdf = (1.0 / math.sqrt(2.0 * math.pi)) * math.exp(-0.5 * (x**2))
+            local_derivative = phi + x * pdf
+            self.grad += local_derivative * res.grad
+
+        res._backward = _backward
+        return res
 
     def backward(self):
         """Perform reverse-mode automatic differentiation from this node."""
