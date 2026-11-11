@@ -84,10 +84,6 @@ The [`notes/`](notes/) directory has my detailed write-ups of every concept and 
 
 These aren't polished tutorials. They're the actual notes I wrote while figuring things out.
 
-## What's next
-
-This is Week 1 of learning AI systems from first principles. Next: **tensor-valued autograd** — replacing scalar `Value` objects with contiguous arrays, implementing vector-Jacobian products, and dealing with broadcasting rules during backprop (when you broadcast in the forward pass, you have to sum along the broadcasted axes in the backward pass).
-
 ## Acknowledgements
 
 Built while working through [Andrej Karpathy's Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ). The base micrograd design is his. The extensions, tests, notes, and benchmarks are mine.
