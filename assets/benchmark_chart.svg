@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Inter, -apple-system, Segoe UI, sans-serif" font-size="12">
+<rect width="900" height="520" fill="#0d1117" rx="10"/>
+<text x="450" y="28" text-anchor="middle" fill="#e6edf3" font-size="16" font-weight="700">Why Backprop Exists</text>
+<text x="450" y="48" text-anchor="middle" fill="#8b949e" font-size="12">Analytical Autograd vs. Numerical Differentiation (log scale)</text>
+<line x1="80" y1="440.0" x2="860" y2="440.0" stroke="#21262d" stroke-width="1"/>
+<text x="70" y="444.0" text-anchor="end" fill="#8b949e" font-size="11">0.05 ms</text>
+<line x1="80" y1="405.3467558602709" x2="860" y2="405.3467558602709" stroke="#21262d" stroke-width="1"/>
+<text x="70" y="409.3467558602709" text-anchor="end" fill="#8b949e" font-size="11">0.1 ms</text>
+<line x1="80" y1="324.8844147132431" x2="860" y2="324.8844147132431" stroke="#21262d" stroke-width="1"/>
+<text x="70" y="328.8844147132431" text-anchor="end" fill="#8b949e" font-size="11">0.5 ms</text>
+<line x1="80" y1="290.23117057351396" x2="860" y2="290.23117057351396" stroke="#21262d" stroke-width="1"/>
+<text x="70" y="294.23117057351396" text-anchor="end" fill="#8b949e" font-size="11">1 ms</text>
+<line x1="80" y1="209.76882942648606" x2="860" y2="209.76882942648606" stroke="#21262d" stroke-width="1"/>
+<text x="70" y="213.76882942648606" text-anchor="end" fill="#8b949e" font-size="11">5 ms</text>
+<line x1="80" y1="175.11558528675693" x2="860" y2="175.11558528675693" stroke="#21262d" stroke-width="1"/>
+<text x="70" y="179.11558528675693" text-anchor="end" fill="#8b949e" font-size="11">10 ms</text>
+<line x1="80" y1="94.65324413972914" x2="860" y2="94.65324413972914" stroke="#21262d" stroke-width="1"/>
+<text x="70" y="98.65324413972914" text-anchor="end" fill="#8b949e" font-size="11">50 ms</text>
+<line x1="80" y1="440" x2="860" y2="440" stroke="#30363d" stroke-width="1.5"/>
+<line x1="80" y1="60" x2="80" y2="440" stroke="#30363d" stroke-width="1.5"/>
+<text x="450" y="512" text-anchor="middle" fill="#8b949e" font-size="12">Number of Parameters (N)</text>
+<polygon points="158.0,340.75524167630067 314.0,290.5320384633318 470.0,231.7690446619322 626.0,172.2119195277822 782.0,94.1864855159816 782.0,329.59938880873096 626.0,373.7869145813239 470.0,402.43365636912904 314.0,418.413442467516 158.0,404.84929838803913" fill="#f0883e" opacity="0.08"/>
+<path d="M 158.0 340.75524167630067 L 314.0 290.5320384633318 L 470.0 231.7690446619322 L 626.0 172.2119195277822 L 782.0 94.1864855159816" fill="none" stroke="#f85149" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 158.0 404.84929838803913 L 314.0 418.413442467516 L 470.0 402.43365636912904 L 626.0 373.7869145813239 L 782.0 329.59938880873096" fill="none" stroke="#7ee787" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="158.0" cy="340.75524167630067" r="5" fill="#f85149" stroke="#0d1117" stroke-width="2"/>
+<text x="158.0" y="328.75524167630067" text-anchor="middle" fill="#f85149" font-size="10" font-weight="600">0.4ms</text>
+<circle cx="158.0" cy="404.84929838803913" r="5" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+<text x="158.0" y="422.84929838803913" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">0.10ms</text>
+<line x1="176.0" y1="348.75524167630067" x2="176.0" y2="396.84929838803913" stroke="#f0883e" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="182.0" y="376.8022700321699" fill="#f0883e" font-size="11" font-weight="700">4x</text>
+<text x="158.0" y="460" text-anchor="middle" fill="#e6edf3" font-size="13" font-weight="600">N=5</text>
+<circle cx="314.0" cy="290.5320384633318" r="5" fill="#f85149" stroke="#0d1117" stroke-width="2"/>
+<text x="314.0" y="278.5320384633318" text-anchor="middle" fill="#f85149" font-size="10" font-weight="600">1.0ms</text>
+<circle cx="314.0" cy="418.413442467516" r="5" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+<text x="314.0" y="436.413442467516" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">0.08ms</text>
+<line x1="332.0" y1="298.5320384633318" x2="332.0" y2="410.413442467516" stroke="#f0883e" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="338.0" y="358.4727404654239" fill="#f0883e" font-size="11" font-weight="700">13x</text>
+<text x="314.0" y="460" text-anchor="middle" fill="#e6edf3" font-size="13" font-weight="600">N=10</text>
+<circle cx="470.0" cy="231.7690446619322" r="5" fill="#f85149" stroke="#0d1117" stroke-width="2"/>
+<text x="470.0" y="219.7690446619322" text-anchor="middle" fill="#f85149" font-size="10" font-weight="600">3.2ms</text>
+<circle cx="470.0" cy="402.43365636912904" r="5" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+<text x="470.0" y="420.43365636912904" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">0.11ms</text>
+<line x1="488.0" y1="239.7690446619322" x2="488.0" y2="394.43365636912904" stroke="#f0883e" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="494.0" y="321.1013505155306" fill="#f0883e" font-size="11" font-weight="700">30x</text>
+<text x="470.0" y="460" text-anchor="middle" fill="#e6edf3" font-size="13" font-weight="600">N=20</text>
+<circle cx="626.0" cy="172.2119195277822" r="5" fill="#f85149" stroke="#0d1117" stroke-width="2"/>
+<text x="626.0" y="160.2119195277822" text-anchor="middle" fill="#f85149" font-size="10" font-weight="600">10.6ms</text>
+<circle cx="626.0" cy="373.7869145813239" r="5" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+<text x="626.0" y="391.7869145813239" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">0.19ms</text>
+<line x1="644.0" y1="180.2119195277822" x2="644.0" y2="365.7869145813239" stroke="#f0883e" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="650.0" y="276.9994170545531" fill="#f0883e" font-size="11" font-weight="700">56x</text>
+<text x="626.0" y="460" text-anchor="middle" fill="#e6edf3" font-size="13" font-weight="600">N=40</text>
+<circle cx="782.0" cy="94.1864855159816" r="5" fill="#f85149" stroke="#0d1117" stroke-width="2"/>
+<text x="782.0" y="82.1864855159816" text-anchor="middle" fill="#f85149" font-size="10" font-weight="600">50.5ms</text>
+<circle cx="782.0" cy="329.59938880873096" r="5" fill="#7ee787" stroke="#0d1117" stroke-width="2"/>
+<text x="782.0" y="347.59938880873096" text-anchor="middle" fill="#7ee787" font-size="10" font-weight="600">0.46ms</text>
+<line x1="800.0" y1="102.1864855159816" x2="800.0" y2="321.59938880873096" stroke="#f0883e" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="806.0" y="215.89293716235628" fill="#f0883e" font-size="11" font-weight="700">111x</text>
+<text x="782.0" y="460" text-anchor="middle" fill="#e6edf3" font-size="13" font-weight="600">N=80</text>
+<rect x="95" y="75" width="210" height="62" fill="#161b22" stroke="#30363d" stroke-width="1" rx="6"/>
+<line x1="107" y1="95" x2="127" y2="95" stroke="#7ee787" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="117" cy="95" r="4" fill="#7ee787"/>
+<text x="135" y="99" fill="#e6edf3" font-size="11">Backprop (1 backward pass)</text>
+<line x1="107" y1="117" x2="127" y2="117" stroke="#f85149" stroke-width="2.5" stroke-linecap="round"/>
+<circle cx="117" cy="117" r="4" fill="#f85149"/>
+<text x="135" y="121" fill="#e6edf3" font-size="11">Numerical diff (2N forward passes)</text>
+<text x="450" y="492" text-anchor="middle" fill="#f0883e" font-size="11" font-weight="600">The gap grows linearly with N. At real model scale (millions of params), numerical diff is not an option.</text>
+</svg>

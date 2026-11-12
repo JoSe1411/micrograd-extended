@@ -41,16 +41,21 @@ I kept reading "backprop is efficient" without a concrete sense of *how much*. S
 
 Backprop computes **all N gradients** in roughly 2x the cost of a single forward pass. Numerical differentiation needs **2N separate forward passes** — two per parameter.
 
+<p align="center">
+  <img src="assets/benchmark_chart.svg" alt="Benchmark chart: Backprop vs Numerical Differentiation scaling — backprop stays near-flat while numerical diff grows linearly with N" width="100%">
+</p>
+
 ```
-N (params)  Backprop     Numerical (2N passes)  Speedup
-─────────────────────────────────────────────────────────
-5           0.062 ms     0.306 ms                 5x
-10          0.064 ms     0.941 ms                15x
-20          0.111 ms     3.047 ms                28x
-40          0.189 ms    10.216 ms                54x
+N (params)  Backprop     Numerical (2N passes)   Speedup
+──────────────────────────────────────────────────────────
+5           0.101 ms       0.364 ms                  4x
+10          0.077 ms       0.994 ms                 13x
+20          0.106 ms       3.220 ms                 30x
+40          0.188 ms      10.598 ms                 57x
+80          0.455 ms      50.469 ms                111x
 ```
 
-The speedup grows linearly with N. At 40 parameters, backprop is **54x faster**. At the scale of a real model with millions of parameters, numerical differentiation is simply not an option.
+The speedup grows linearly with N. At 80 parameters, backprop is **111x faster**. At the scale of a real model with millions of parameters, numerical differentiation is simply not an option.
 
 But there's a tradeoff: backprop needs to **store every intermediate value** from the forward pass in memory. Numerical diff can throw them away immediately. This compute-vs-memory tension is exactly why techniques like activation checkpointing and FlashAttention exist in production systems — they trade a bit of extra compute to avoid storing everything in GPU memory.
 
