@@ -18,8 +18,6 @@ dist/
 *.egg
 
 # Test / coverage
-tests/
-test_*.py
 .pytest_cache/
 .coverage
 htmlcov/

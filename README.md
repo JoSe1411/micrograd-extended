@@ -4,6 +4,14 @@ A scalar-valued autograd engine and neural net library, written from scratch in 
 
 Started from [Karpathy's micrograd](https://github.com/karpathy/micrograd), but this version goes further. I wanted to actually understand the pieces, not just watch the lecture and nod along. So I added the things I kept reading about in papers and couldn't explain from first principles.
 
+### Computation graph of a single neuron — forward pass values + backpropagated gradients
+
+<p align="center">
+  <img src="assets/computation_graph.svg" alt="Computation graph showing a single neuron's forward and backward pass with data and gradient values at each node" width="100%">
+</p>
+
+Every node stores its forward-pass value (<span style="color:#7ee787">data</span>) and the gradient of the output with respect to that node (<span style="color:#f85149">grad</span>), computed automatically via reverse-mode autodiff.
+
 ## What's in here
 
 **Autograd engine** ([`engine.py`](micrograd/engine.py)) — a `Value` class that tracks a computation graph of scalar operations and computes gradients via reverse-mode autodiff (backpropagation). Supports `+`, `-`, `*`, `/`, `**`, `exp`, `log`, and full Python operator overloading (`__radd__`, `__rmul__`, `__rtruediv__`, etc.) so expressions like `2 * x + 1` just work.
