@@ -94,4 +94,4 @@ These aren't polished tutorials. They're the actual notes I wrote while figuring
 
 ## Acknowledgements
 
-Built while working through [Andrej Karpathy's Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ). The base micrograd design is his. The extensions, tests, notes, and benchmarks are mine.
+Built while working through [Andrej Karpathy's Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ). The base micrograd design is his. 
